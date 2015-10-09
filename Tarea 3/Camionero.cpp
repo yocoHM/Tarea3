@@ -9,43 +9,14 @@
 #include <iostream>
 #include <vector>
 
-//algoritmo Ávido
-std::vector<int> calculateDistance(int kmMaximos, std::vector<int> distancias)
-{
-  std::vector<int> paradas;//vector solución
-  int kmRecorridos = 0;
-  int pos = -1;
-  int tamDistancias = int(distancias.size()-1);
-  
-  while(pos != tamDistancias) {
-    
-    //cuando la suma de KmRecorridos con la siguiente distancia a recorrer es más grande que maxKilometros, se necesita "cargar gas"
-    if(kmRecorridos + distancias[pos+1] > kmMaximos) {
-      //se agrega la parada al vector paradas
-      paradas.push_back(pos);
-      //se reinician KmRecorridos porque se "cargó gas"
-      kmRecorridos = 0;
-      
-      
-      if (paradas[pos] != 0 && paradas[pos] == paradas[pos+1]) {
-        pos = tamDistancias;
-        paradas[0] = -1;
-      }
-      
-    }
-    //cuando no se necesita "cargar gas" se entra al else
-    else {
-      //se pasa a la siguiente distancia a recorrer
-      pos++;
-      //se suma la distancia actual recorrida a kmRecorridos
-      kmRecorridos += distancias[pos];
-    }
-    
-  }
-  
-  return paradas;
-  
-}
+/*
+ 
+ Complejidad: O(n) porque recorre las 'n' distancias indicadas en el vector "distancias".
+ Técnica: Algoritmo ávido
+ 
+*/
+
+std::vector<int> calcularRecorrido(int kmMaximos, std::vector<int> distancias);
 
 int main(int argc, const char * argv[]) {
   
@@ -55,7 +26,7 @@ int main(int argc, const char * argv[]) {
   //"n" kilometros que puede recorrer el camión sin parar
   int kmMaximos = 200;
   
-  std::vector<int> paradas = calculateDistance(kmMaximos, distancias);
+  std::vector<int> paradas = calcularRecorrido(kmMaximos, distancias);
   int tamParadas = int(paradas.size());
   
   if (paradas.empty()) {
@@ -74,4 +45,45 @@ int main(int argc, const char * argv[]) {
   
   return 0;
   
-}
+}//cierre del main
+
+std::vector<int> calcularRecorrido(int kmMaximos, std::vector<int> distancias) {
+  
+  std::vector<int> paradas;//vector solución
+  int kmRecorridos = 0;
+  int pos = -1;
+  int tamDistancias = int(distancias.size()-1);
+  
+  while(pos != tamDistancias) {
+    
+    //cuando la suma de KmRecorridos con la siguiente distancia a recorrer es más grande que maxKilometros, se necesita "cargar gas"
+    if(kmRecorridos + distancias[pos+1] > kmMaximos) {
+      //se agrega la parada al vector paradas
+      paradas.push_back(pos);
+      //se reinician KmRecorridos porque se "cargó gas"
+      kmRecorridos = 0;
+      
+      //checar si el recorrido es posible para el camión
+      if (paradas[pos] != 0 && paradas[pos] == paradas[pos+1]) {
+        pos = tamDistancias;
+        paradas[0] = -1;
+      }
+      
+    }
+    //cuando no se necesita "cargar gas" se entra al else
+    else {
+      //se pasa a la siguiente distancia a recorrer
+      pos++;
+      //se suma la distancia actual recorrida a kmRecorridos
+      kmRecorridos += distancias[pos];
+    }
+    
+  }
+  
+  return paradas;
+  
+}//cierre de calcularRecorrido
+
+
+
+

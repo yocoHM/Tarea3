@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D6C41B8E1BC75F4700E0FB47 /* Parrafos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6C41B8D1BC75F4700E0FB47 /* Parrafos.cpp */; settings = {ASSET_TAGS = (); }; };
+		D6C5BB0D1BC748B2001DA219 /* Parejas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6C5BB0C1BC748B2001DA219 /* Parejas.cpp */; settings = {ASSET_TAGS = (); }; };
 		D6D818BB1BC59F550028DC97 /* Camionero.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6D818BA1BC59F550028DC97 /* Camionero.cpp */; };
+		D6D818C21BC5D62E0028DC97 /* Subsecuencia.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D6D818C11BC5D62E0028DC97 /* Subsecuencia.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +26,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D6C41B8D1BC75F4700E0FB47 /* Parrafos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Parrafos.cpp; sourceTree = "<group>"; };
+		D6C5BB0C1BC748B2001DA219 /* Parejas.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Parejas.cpp; sourceTree = "<group>"; };
 		D6D818B71BC59F550028DC97 /* Tarea 3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Tarea 3"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6D818BA1BC59F550028DC97 /* Camionero.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Camionero.cpp; sourceTree = "<group>"; };
+		D6D818C11BC5D62E0028DC97 /* Subsecuencia.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Subsecuencia.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				D6D818BA1BC59F550028DC97 /* Camionero.cpp */,
+				D6D818C11BC5D62E0028DC97 /* Subsecuencia.cpp */,
+				D6C5BB0C1BC748B2001DA219 /* Parejas.cpp */,
+				D6C41B8D1BC75F4700E0FB47 /* Parrafos.cpp */,
 			);
 			path = "Tarea 3";
 			sourceTree = "<group>";
@@ -118,7 +127,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C5BB0D1BC748B2001DA219 /* Parejas.cpp in Sources */,
 				D6D818BB1BC59F550028DC97 /* Camionero.cpp in Sources */,
+				D6D818C21BC5D62E0028DC97 /* Subsecuencia.cpp in Sources */,
+				D6C41B8E1BC75F4700E0FB47 /* Parrafos.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +247,7 @@
 				D6D818C01BC59F550028DC97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
